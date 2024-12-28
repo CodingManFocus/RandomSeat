@@ -207,7 +207,7 @@ function App() {
             ))}
           </ul>*/}
             <footer>
-              <p>개발/배경 출처 : 포커스 (이하 "홍태민")</p>
+              <p>개발/배경 출처 : 홍태민(또는 포커스)</p>
               <a href="https://playentry.org"><p>효과음 출처 : 엔트리</p></a>
               <a href="https://codenamemc.kr"><p>© 2024 CodenameMC All rights reserved.</p></a>
             </footer>
