@@ -441,11 +441,6 @@ function App() {
           </label>
         </div>
 
-        <div className="rule-actions">
-          <button onClick={handleApplySeatRules}>예외 좌석 적용</button>
-          <span>고정 좌석과 금지 좌석은 파란색으로 표시됩니다.</span>
-        </div>
-
         <div className="grid-container" style={gridStyle}>
           {seats.map((row, rowIndex) => row.map((seat, colIndex) => renderSeat(seat, rowIndex, colIndex)))}
         </div>
@@ -472,6 +467,10 @@ function App() {
               placeholder={'1,6\n5,5'}
             />
           </div>
+        </div>
+        <div className="rule-actions">
+          <button onClick={handleApplySeatRules}>예외 좌석 적용</button>
+          <span>고정 좌석과 금지 좌석은 파란색으로 표시됩니다.</span>
         </div>
         <footer>
           <p>개발/배경 출처 : 구산중 홍태민(포커스)</p>
