@@ -1,28 +1,32 @@
 #root {
-  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
   display: flex;
-} 
+  box-sizing: border-box;
+}
 
 .upload-button {
-  display: inline-block;
-  padding: 10px 20px; 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
   color: #fff;
-  background-color: #007BFF;
+  background-color: #007bff;
   text-shadow: none;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   text-align: center;
+  min-height: 44px;
+  box-sizing: border-box;
 }
 
-/* 숨겨진 파일 입력 */
 .file-input {
-  display: none; /* input 숨김 */
+  display: none;
 }
 
 .overlay {
@@ -33,7 +37,7 @@
   display: flex;
   width: 100%;
   height: 100%;
-  background: url("/background.png") no-repeat center;
+  background: url('/background.png') no-repeat center;
   background-size: cover;
 }
 
@@ -46,66 +50,142 @@
   width: 100%;
   height: 100%;
   background: no-repeat center;
-  background-color: rgba(255, 255, 255, 0.7);;
+  background-color: rgba(255, 255, 255, 0.7);
   background-size: cover;
 }
 
 .App {
-  font-family: arial;
+  font-family: Arial, sans-serif;
   font-size: 24px;
   color: black;
-  text-shadow: -2px 0px rgb(255, 255, 255), 0px 2px rgb(255, 255, 255), 2px 0px rgb(255, 255, 255), 0px -2px rgb(255, 255, 255);
+  text-shadow: -2px 0 rgb(255, 255, 255), 0 2px rgb(255, 255, 255), 2px 0 rgb(255, 255, 255), 0 -2px rgb(255, 255, 255);
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   align-items: center;
   justify-content: center;
 }
 
 button {
-  left: 50%;
-  top: 50%;
   margin: 5px;
   padding: 10px 20px;
+  font-size: 16px;
+  color: #111;
+  background-color: rgba(255, 255, 255, 0.92);
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.rule-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(240px, 320px));
+  gap: 16px;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.rule-card {
+  padding: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.18);
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.88);
+  text-shadow: none;
+  text-align: left;
+}
+
+.rule-card h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+.rule-card p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.rule-card textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  border: 1px solid #8fb3d9;
+  border-radius: 10px;
+  box-sizing: border-box;
+  resize: vertical;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.rule-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
   font-size: 16px;
 }
 
 .grid-container {
   display: grid;
   gap: 5px;
-  margin-top: 20px;
   margin: 0 auto;
   align-items: center;
   justify-content: center;
+  max-width: min(100%, 920px);
 }
 
 .grid-item {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
+  min-height: 72px;
+  padding: 6px;
   background-color: lightgray;
   border: 1px solid black;
   font-size: 18px;
+  word-break: keep-all;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .grid-item.selected {
   background-color: lightgreen;
 }
 
-.assigned-list {
-  margin-top: 20px;
-}
-
-.assigned-list ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.assigned-list li {
-  font-size: 18px;
-  margin: 5px 0;
+.grid-item.exception {
+  color: #083b73;
+  font-weight: 700;
 }
 
 footer {
   font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .App {
+    font-size: 18px;
+  }
+
+  .rule-panel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .grid-item {
+    min-height: 60px;
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 16px;
+  }
 }
